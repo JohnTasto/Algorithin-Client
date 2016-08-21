@@ -1,5 +1,5 @@
-import React from 'react';
-import {Link} from 'react-router';
+import React from 'react'
+import {Link} from 'react-router'
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
         <li>Remove the demo and start coding: npm run remove-demo</li>
       </ol>
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
