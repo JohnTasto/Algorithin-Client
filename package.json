@@ -29,6 +29,7 @@
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "axios": "0.14.0",
     "bootstrap": "4.0.0-alpha.3",
     "font-awesome": "4.6.3",
     "object-assign": "4.1.0",
@@ -38,6 +39,7 @@
     "react-router": "2.7.0",
     "react-router-redux": "4.0.5",
     "redux": "3.5.2",
+    "redux-form": "5.3.3",
     "redux-thunk": "2.1.0"
   },
   "devDependencies": {
