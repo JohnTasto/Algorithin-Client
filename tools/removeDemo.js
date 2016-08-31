@@ -14,7 +14,7 @@ const pathsToRemove = [
   './src/images',
   './src/reducers/*',
   './src/store/store.spec.js',
-  './src/styles',
+  './src/styles/_styles.scss',
   './src/routes.js',
   './src/index.js',
 ]
@@ -31,6 +31,10 @@ const filesToCreate = [
   {
     path: './src/reducers/index.js',
     content: '// Set up your root reducer here...\n import { combineReducers } from \'redux\'\n export default combineReducers',
+  },
+  {
+    path: './src/styles/_styles.scss',
+    content: '// Set up your global styles here...\n',
   },
 ]
 
