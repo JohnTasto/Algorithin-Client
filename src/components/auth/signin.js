@@ -8,9 +8,9 @@ class Signin extends Component {
 
   static propTypes = {
     signinUser: PropTypes.func,
-    errorMessage: PropTypes.bool,
+    errorMessage: PropTypes.string,
     handleSubmit: PropTypes.func,
-    fields: PropTypes.array,
+    fields: PropTypes.object,
   }
 
   handleFormSubmit({ email, password }) {
