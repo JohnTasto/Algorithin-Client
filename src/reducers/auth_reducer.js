@@ -8,9 +8,9 @@ import {
 export default function(state = {}, action) {
   switch(action.type) {
     case AUTH_USER:
-      return { ...state, error: '', authenticated: true }
+      return { ...state, error: '', authenticated: true, email: action.email }
     case UNAUTH_USER:
-      return { ...state, authenticated: false }
+      return { ...state, authenticated: false, email: undefined }
     case AUTH_ERROR:
       return { ...state, error: action.payload }
     case FETCH_MESSAGE:
