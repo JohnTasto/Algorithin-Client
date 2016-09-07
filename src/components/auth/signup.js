@@ -42,13 +42,13 @@ class Signup extends Component {
           {email.touched && email.error && <div className="error">{email.error}</div>}
         </FormGroup>
         <FormGroup>
-          <Label for="password1">Password:</Label>
-          <Input id="password1" type="password" {...password} />
+          <Label for="password">Password:</Label>
+          <Input id="password" type="password" {...password} />
           {password.touched && password.error && <div className="error">{password.error}</div>}
         </FormGroup>
         <FormGroup>
-          <Label for="password2">Password:</Label>
-          <Input id="password2" type="password" {...password} />
+          <Label for="passwordConfirm">Confirm password:</Label>
+          <Input id="passwordConfirm" type="password" {...passwordConfirm} />
           {passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div>}
         </FormGroup>
         {this.renderAlert()}
