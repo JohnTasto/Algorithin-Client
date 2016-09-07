@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 import * as actions from '../../actions'
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
+
 
 class Signup extends Component {
 
@@ -30,25 +32,28 @@ class Signup extends Component {
     const { handleSubmit, fields: { email, password, passwordConfirm }} = this.props
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <fieldset className="form-group">
-          <label>Email:</label>
-          <input className="form-control" {...email} />
+      <Form
+        onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}
+        style={{ width: '320px', margin: 'auto'}}
+      >
+        <FormGroup>
+        <Label for="email">Email:</Label>
+          <Input id="email" type="email" {...email} />
           {email.touched && email.error && <div className="error">{email.error}</div>}
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Password:</label>
-          <input className="form-control" {...password} type="password" />
+        </FormGroup>
+        <FormGroup>
+          <Label for="password1">Password:</Label>
+          <Input id="password1" type="password" {...password} />
           {password.touched && password.error && <div className="error">{password.error}</div>}
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Confirm Password:</label>
-          <input className="form-control" {...passwordConfirm} type="password" />
+        </FormGroup>
+        <FormGroup>
+          <Label for="password2">Password:</Label>
+          <Input id="password2" type="password" {...password} />
           {passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div>}
-        </fieldset>
+        </FormGroup>
         {this.renderAlert()}
-        <button action="submit" className="btn btn-primary">Sign up!</button>
-      </form>
+        <Button action="submit" color="primary">Sign up!</Button>
+      </Form>
     )
   }
 }

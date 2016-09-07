@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
+import { Container } from 'reactstrap'
 
 import Header from './header'
+
 
 export default class App extends Component {
 
@@ -10,10 +12,12 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <Container fluid={true}>
         <Header />
-        {this.props.children}
-      </div>
+        <div style={{marginTop: '54px'}}>
+          {this.props.children}
+        </div>
+      </Container>
     )
   }
 }

@@ -34,10 +34,12 @@
     "font-awesome": "4.6.3",
     "object-assign": "4.1.0",
     "react": "15.3.1",
+    "react-addons-transition-group": "15.3.1",
     "react-dom": "15.3.1",
     "react-redux": "4.4.5",
     "react-router": "2.7.0",
     "react-router-redux": "4.0.5",
+    "reactstrap": "3.0.0",
     "redux": "3.5.2",
     "redux-form": "5.3.3",
     "redux-thunk": "2.1.0"

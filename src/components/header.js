@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import { Navbar, Nav, NavItem, NavLink } from 'reactstrap'
+
 
 class Header extends Component {
 
@@ -12,31 +14,31 @@ class Header extends Component {
     if (this.props.authenticated) {
       // show a link to sign out
       return (
-        <li className="nav-item">
-          <Link className="nav-link" to="/signout">Sign Out</Link>
-        </li>
+        <NavItem>
+          <NavLink tag={Link} to="/signout">Sign Out</NavLink>
+        </NavItem>
       )
     } else {
       // show a link to sign in or sign up
       return [
-        <li className="nav-item" key={1}>
-          <Link className="nav-link" to="/signin">Sign In</Link>
-        </li>,
-        <li className="nav-item" key={2}>
-          <Link className="nav-link" to="/signup">Sign Up</Link>
-        </li>,
+        <NavItem key={1}>
+          <NavLink tag={Link} to="/signin">Sign In</NavLink>
+        </NavItem>,
+        <NavItem key={2}>
+          <NavLink tag={Link} to="/signup">Sign Up</NavLink>
+        </NavItem>,
       ]
     }
   }
 
   render() {
     return (
-      <nav className="navbar navbar-light">
-        <Link to="/" className="navbar-brand">Redux Auth</Link>
-        <ul className="nav navbar-nav">
+      <Navbar color="inverse" dark fixed="top">
+        <NavLink tag={Link} to="/" className="navbar-brand">Algorithin</NavLink>
+        <Nav className="pull-xs-right" navbar>
           {this.renderLinks()}
-        </ul>
-      </nav>
+        </Nav>
+      </Navbar>
     )
   }
 }
