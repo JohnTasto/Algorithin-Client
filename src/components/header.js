@@ -4,36 +4,25 @@ import { Link } from 'react-router'
 import { Navbar, Nav, NavItem, NavLink } from 'reactstrap'
 import Gravatar from 'react-gravatar'
 
+import * as actions from '../actions'
+
 
 class Header extends Component {
 
   static propTypes = {
-    authenticated: PropTypes.bool,
     email: PropTypes.string,
+    signoutUser: PropTypes.func,
   }
 
   renderLinks() {
-    if (this.props.authenticated) {
-      // show a link to sign out
-      return [
-        <NavItem key={1}>
-          <NavLink tag={Link} to="/signout">Sign Out</NavLink>
-        </NavItem>,
-        <NavItem key={2}>
-          <Gravatar email={this.props.email} https size={38} />
-        </NavItem>,
-      ]
-    } else {
-      // show a link to sign in or sign up
-      return [
-        <NavItem key={1}>
-          <NavLink tag={Link} to="/signin">Sign In</NavLink>
-        </NavItem>,
-        <NavItem key={2}>
-          <NavLink tag={Link} to="/signup">Sign Up</NavLink>
-        </NavItem>,
-      ]
-    }
+    return [
+      <NavItem key={1}>
+        <NavLink tag={Link} to="/" onClick={this.props.signoutUser}>Sign Out</NavLink>
+      </NavItem>,
+      <NavItem key={2}>
+        <Gravatar email={this.props.email} https size={38} />
+      </NavItem>,
+    ]
   }
 
   render() {
@@ -50,9 +39,8 @@ class Header extends Component {
 
 function mapStateToProps(state) {
   return {
-    authenticated: state.auth.authenticated,
     email: state.auth.email,
   }
 }
 
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps, actions)(Header)

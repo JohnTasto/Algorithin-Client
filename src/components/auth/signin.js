@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { reduxForm } from 'redux-form'
 import * as actions from '../../actions'
+import { Link } from 'react-router'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
 
 
@@ -32,10 +33,7 @@ class Signin extends Component {
     const { handleSubmit, fields: { email, password }} = this.props
 
     return (
-      <Form
-        onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}
-        style={{ width: '320px', margin: 'auto' }}
-      >
+      <Form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
         <FormGroup>
           <Label for="email">Email:</Label>
           <Input id="email" type="email" {...email} />
@@ -46,6 +44,7 @@ class Signin extends Component {
         </FormGroup>
         {this.renderAlert()}
         <Button action="submit" color="primary">Sign in</Button>
+        <Link to="/signup">Sign up</Link> 
       </Form>
     )
   }
